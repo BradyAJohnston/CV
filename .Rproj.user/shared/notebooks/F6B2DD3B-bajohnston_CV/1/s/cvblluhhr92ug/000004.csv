@@ -1,0 +1,14 @@
+"0","presentations %>% 
+  arrange(-When) %>% 
+  
+  detailed_entries(
+    when = When, 
+    why = Title, 
+    where = Location, 
+    with = Conference,
+    what = What
+    
+  )
+"
+"2","Error in FUN(X[[i]], ...) : object 'Conference' not found
+"

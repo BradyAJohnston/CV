@@ -1,0 +1,127 @@
+---
+name: Brady
+surname: Johnston
+position: "PhD Student"
+address: "School of Molecular Sciences, The University of Western Australia"
+# phone: +614 6488 4445
+www: bradyajohnston.github.io
+email: "brady.johnston@research.uwa.edu.au"
+twitter: \@bradyajohnston
+github: bradyajohnston
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# About Me
+
+I am a PhD student working in biophysics, structural biology and molecular
+biology. I am working in the Bond Lab at the University of Western Australia on re-engineering RNA binding proteins as novel biotechnological tools.
+
+I am passionate about clear and concise visualisation of complex data and intricate biological concepts.  I am self-taught in data science and high-performance computing, putting these concepts into practice with my research, in my hobbies and sharing the knowledge readily through teaching workshops and create guides for other scientists looking to improve their abilities.
+
+# Education
+
+```{r}
+library(tibble)
+education <- googlesheets4::read_sheet(ss = "https://docs.google.com/spreadsheets/d/1pkm36G04L6EdCyLCmE3sf11lpFMwmKBBHqqVL6l8_Dk/edit#gid=0")
+
+education %>% 
+  # arrange(-Year) %>% 
+  detailed_entries(
+    what = Institution, 
+    when = Year, 
+    with = Degree, 
+    where = Where, 
+    why = Details)
+
+```
+
+# Research Skills
+
+```{r}
+skills <- googlesheets4::read_sheet(ss = "https://docs.google.com/spreadsheets/d/1pkm36G04L6EdCyLCmE3sf11lpFMwmKBBHqqVL6l8_Dk/edit#gid=0", 4)
+
+skills %>% 
+  brief_entries(
+    what = Detail , 
+    with = Time)
+```
+
+
+# Teaching Experience
+
+```{r}
+teaching <- googlesheets4::read_sheet(ss = "https://docs.google.com/spreadsheets/d/1pkm36G04L6EdCyLCmE3sf11lpFMwmKBBHqqVL6l8_Dk/edit#gid=0", 5)
+
+teaching %>% 
+  # arrange(-lubridate::as_date(when)) %>% 
+  detailed_entries(
+    when = When, 
+    why = Details, 
+    where = Location, 
+    with = WhereAt,
+    what = What
+    
+  )
+```
+
+\newpage
+
+# Presentations
+
+```{r}
+
+presentations <- googlesheets4::read_sheet(ss = "https://docs.google.com/spreadsheets/d/1pkm36G04L6EdCyLCmE3sf11lpFMwmKBBHqqVL6l8_Dk/edit#gid=0", sheet = 2)
+
+presentations %>% 
+  arrange(-When) %>% 
+  
+  detailed_entries(
+    when = When, 
+    why = Title, 
+    where = Location, 
+    with = WhereAt,
+    what = What
+    
+  )
+```
+
+
+
+# Public Talks & Outreach
+
+```{r}
+public <- googlesheets4::read_sheet(ss = "https://docs.google.com/spreadsheets/d/1pkm36G04L6EdCyLCmE3sf11lpFMwmKBBHqqVL6l8_Dk/edit#gid=0", sheet = 3)
+
+public %>% 
+  arrange(-When) %>% 
+  detailed_entries(
+    when = When, 
+    why = Title, 
+    where = Location, 
+    with = WhereAt, 
+    what = What
+  )
+```
+
+# Awards and Scholarships
+```{r}
+presentations <- googlesheets4::read_sheet(ss = "https://docs.google.com/spreadsheets/d/1pkm36G04L6EdCyLCmE3sf11lpFMwmKBBHqqVL6l8_Dk/edit#gid=0", sheet = 6)
+
+presentations %>% 
+  arrange(-When) %>% 
+  
+  detailed_entries(
+    when = When, 
+    what = Details, 
+    where = Location, 
+    # with = WhereAt,
+    with = What
+    
+  )
+```
