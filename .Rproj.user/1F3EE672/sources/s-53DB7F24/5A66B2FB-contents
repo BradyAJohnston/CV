@@ -20,7 +20,7 @@ library(vitae)
 # About Me
 
 I am a PhD student working in biophysics, structural biology and molecular
-biology. I am working in the Bond Lab at the University of Western Australia on re-engineering RNA binding proteins as novel biotechnological tools.
+biology. I work in the Bond Lab at the University of Western Australia on re-engineering RNA binding proteins as novel biotechnological tools.
 
 I am passionate about clear and concise visualisation of complex data and intricate biological concepts.  I am self-taught in data science and high-performance computing, putting these concepts into practice with my research, in my hobbies and sharing the knowledge readily through teaching workshops and create guides for other scientists looking to improve their abilities.
 
@@ -28,7 +28,7 @@ I am passionate about clear and concise visualisation of complex data and intric
 
 ```{r}
 library(tibble)
-education <- googlesheets4::read_sheet(ss = "https://docs.google.com/spreadsheets/d/1pkm36G04L6EdCyLCmE3sf11lpFMwmKBBHqqVL6l8_Dk/edit#gid=0")
+education <- googlesheets4::read_sheet(ss = "https://docs.google.com/spreadsheets/d/1pkm36G04L6EdCyLCmE3sf11lpFMwmKBBHqqVL6l8_Dk/edit#gid=0", sheet = 1)
 
 education %>% 
   # arrange(-Year) %>% 
