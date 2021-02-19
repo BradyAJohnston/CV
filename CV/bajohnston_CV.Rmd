@@ -6,7 +6,7 @@ address: "School of Molecular Sciences, The University of Western Australia"
 # phone: +614 6488 4445
 www: bradyajohnston.github.io
 email: "brady.johnston@research.uwa.edu.au"
-twitter: \@bradyajohnston
+twitter: bradyajohnston
 github: bradyajohnston
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv

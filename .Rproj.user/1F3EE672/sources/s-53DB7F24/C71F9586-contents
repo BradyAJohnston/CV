@@ -1,5 +1,0 @@
-install.packages("pkgsearch")
-library(tidyverse)
-pkgsearch::ps("r3dmol",size = 100) %>% head()
-  filter(map_lgl(package_data, ~ grepl("r3dmol", .x$Title, fixed = TRUE))) %>% 
-  as_tibble() %>% head()
